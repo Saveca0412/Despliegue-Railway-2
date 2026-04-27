@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Burger House</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #111;
+    color: #fff;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #000;
+}
+
+nav h1 {
+    color: #ff6600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav ul li:hover {
+    color: #ff6600;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1550547660-d9450f859349') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.btn {
+    background: #ff6600;
+    padding: 12px 25px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e65c00;
+}
+
+/* MENU */
+.menu {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.menu h2 {
+    margin-bottom: 40px;
+    font-size: 35px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1a1a1a;
+    width: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #ccc;
+    padding: 0 10px 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    color: #777;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h1>Burger House</h1>
+    <ul>
+        <li>Inicio</li>
+        <li>Menú</li>
+        <li>Contacto</li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Las Mejores Hamburguesas 🍔</h2>
+        <p>Jugosas, artesanales y hechas con pasión. Vive una experiencia única en cada bocado.</p>
+        <button class="btn">Ordenar Ahora</button>
+    </div>
+</section>
+
+<!-- MENU -->
+<section class="menu">
+    <h2>Nuestro Menú</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+            <h3>Clásica</h3>
+            <p>Carne 100% res, queso, lechuga y tomate.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b">
+            <h3>Doble Explosión</h3>
+            <p>Doble carne, doble queso y full sabor.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086">
+            <h3>BBQ Bacon</h3>
+            <p>Salsa BBQ, tocineta crujiente y queso cheddar.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Burger House - Todos los derechos reservados
+</footer>
+
+</body>
+</html>
