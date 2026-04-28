@@ -2,37 +2,45 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Las carnes de Bulma</title>
+<title>Dogzilla Street Food</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: #111;
+    background: #0f0f0f;
     color: #fff;
+    overflow-x: hidden;
 }
 
 /* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 50px;
-    background: #000;
+    align-items: center;
+    padding: 20px 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
 }
 
-nav h1 {
-    color: #bc1212;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff3c00;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    list-style: none;
 }
 
 nav ul li {
@@ -41,97 +49,156 @@ nav ul li {
 }
 
 nav ul li:hover {
-    color: #ff6600;
+    color: #ff3c00;
 }
 
 /* HERO */
 .hero {
-    height: 90vh;
-    background: url('https://images.unsplash.com/photo-1550547660-d9450f859349') center/cover no-repeat;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
     display: flex;
     align-items: center;
-    padding-left: 50px;
+    padding: 0 60px;
 }
 
+/* CONTENIDO HERO */
 .hero-content {
-    max-width: 500px;
+    max-width: 600px;
+    animation: fadeIn 1.5s ease;
 }
 
-.hero h2 {
-    font-size: 50px;
+.hero h1 {
+    font-size: 60px;
     margin-bottom: 20px;
+}
+
+.hero span {
+    color: #ff3c00;
 }
 
 .hero p {
-    margin-bottom: 20px;
-    color: #ddd;
+    margin-bottom: 25px;
+    color: #ccc;
+    font-size: 18px;
 }
 
 .btn {
-    background: #ff6600;
-    padding: 12px 25px;
+    padding: 14px 30px;
     border: none;
+    background: #ff3c00;
     color: #fff;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 30px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #e65c00;
+    background: #ff1e00;
+    transform: scale(1.05);
 }
 
 /* MENU */
 .menu {
-    padding: 60px 50px;
+    padding: 100px 60px;
     text-align: center;
 }
 
 .menu h2 {
-    margin-bottom: 40px;
-    font-size: 35px;
+    font-size: 40px;
+    margin-bottom: 50px;
 }
 
 .cards {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .card {
-    background: #1a1a1a;
-    width: 250px;
-    border-radius: 15px;
+    background: #1b1b1b;
+    border-radius: 20px;
     overflow: hidden;
-    transition: 0.3s;
+    width: 280px;
+    transition: 0.4s;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px) scale(1.03);
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
 }
 
 .card h3 {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .card p {
     font-size: 14px;
-    color: #ccc;
-    padding: 0 10px 10px;
+    color: #bbb;
+    padding: 0 15px 20px;
+}
+
+/* PROMO */
+.promo {
+    padding: 80px 60px;
+    background: linear-gradient(135deg, #ff3c00, #ff7300);
+    text-align: center;
+}
+
+.promo h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.promo p {
+    margin-bottom: 20px;
 }
 
 /* FOOTER */
 footer {
-    background: #000;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
+    background: #000;
     color: #777;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE 🔥 */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .menu {
+        padding: 60px 20px;
+    }
 }
 </style>
 
@@ -141,10 +208,11 @@ footer {
 
 <!-- NAV -->
 <nav>
-    <h1>Burger House</h1>
+    <div class="logo">🌭 Dogzilla</div>
     <ul>
         <li>Inicio</li>
         <li>Menú</li>
+        <li>Promos</li>
         <li>Contacto</li>
     </ul>
 </nav>
@@ -152,42 +220,49 @@ footer {
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <h2>Las Mejores Hamburguesas 🍔</h2>
-        <p>Jugosas, artesanales y hechas con pasión. Vive una experiencia única en cada bocado.</p>
-        <button class="btn">Ordenar Ahora</button>
+        <h1>Explota tu hambre con <span>Dogzilla</span></h1>
+        <p>Perros calientes gigantes, cargados de sabor y calle. Una experiencia brutal en cada mordida.</p>
+        <button class="btn">Ordenar ahora</button>
     </div>
 </section>
 
 <!-- MENU -->
 <section class="menu">
-    <h2>Nuestro Menú</h2>
+    <h2>Nuestros Perros 🔥</h2>
 
     <div class="cards">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
-            <h3>Clásica</h3>
-            <p>Carne 100% res, queso, lechuga y tomate.</p>
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop">
+            <h3>Dogzilla Clásico</h3>
+            <p>Salchicha premium, papitas, salsas y queso.</p>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b">
-            <h3>Doble Explosión</h3>
-            <p>Doble carne, doble queso y full sabor.</p>
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=800&auto=format&fit=crop">
+            <h3>El Destructor</h3>
+            <p>Doble salchicha, tocineta, cheddar y BBQ.</p>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086">
-            <h3>BBQ Bacon</h3>
-            <p>Salsa BBQ, tocineta crujiente y queso cheddar.</p>
+            <img src="https://images.unsplash.com/photo-1598137265822-4a0f7d5d4a77?q=80&w=800&auto=format&fit=crop">
+            <h3>Monster Cheese</h3>
+            <p>Extra queso derretido y explosión cremosa.</p>
         </div>
 
     </div>
 </section>
 
+<!-- PROMO -->
+<section class="promo">
+    <h2>🔥 Promo del día</h2>
+    <p>Compra 2 Dogzillas y recibe papas gratis 🍟</p>
+    <button class="btn">Aprovechar</button>
+</section>
+
 <!-- FOOTER -->
 <footer>
-    © 2026 Burger House - Todos los derechos reservados
+    © 2026 Dogzilla Street Food - Sabor que destruye tu hambre
 </footer>
 
 </body>
